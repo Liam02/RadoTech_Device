@@ -10,20 +10,23 @@ public:
 
 #endif // USER_H
 ivate:
+    string firstName;
+    string lastName;
     string gender;
     float weightKG;
     float heightCM;
     string daob;
     string country;
-    int phoneNumber;
+    string phoneNumber;
     string email;
     string password;
 
 
 public:
-    User();
+    User(string firstName, string lastName, string gender, float weightKG, float heightCM, string daob, string country, string phoneNumber, string email, string password);
     ~User();
     void updateUser();
+    string getEmail();
 };
 
 

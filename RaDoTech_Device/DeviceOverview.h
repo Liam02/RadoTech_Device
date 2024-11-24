@@ -14,6 +14,8 @@ private:
 
 public:
     void createUser();
+    bool doesUserExist(string email) const;
+    void addUser(User* user);
 
 };
 
