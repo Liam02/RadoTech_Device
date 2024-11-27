@@ -15,6 +15,7 @@ class LoginPage : public QDialog
 public:
     explicit LoginPage(QWidget *parent = nullptr);
     ~LoginPage();
+    void tooManyAccounts();
 
 
 signals:

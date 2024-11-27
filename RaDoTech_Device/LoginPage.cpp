@@ -15,6 +15,11 @@ LoginPage::LoginPage(QWidget *parent) :
     });
 }
 
+void LoginPage::tooManyAccounts(){
+    ui->errorText->setText("Too many accounts");
+    ui->errorText->setStyleSheet("QLabel { color : blue; }");
+}
+
 LoginPage::~LoginPage()
 {
     delete ui;

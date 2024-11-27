@@ -21,6 +21,7 @@ public:
     bool isValidDateOfBirth(const std::string& dob);
     bool isValidEmail(std::string email);
     void userAlreadyExist();
+    void resetPage();
 
 signals:
     void successfulAccountCreation(string firstName, string lastName, string gender, float weightKG, float heightCM, string daob, string country, string phoneNumber, string email, string password);

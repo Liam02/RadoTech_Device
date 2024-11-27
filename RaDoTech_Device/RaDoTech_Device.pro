@@ -12,6 +12,7 @@ SOURCES += \
     CreateAccountPage.cpp \
     DeviceOverview.cpp \
     EnterAccountPage.cpp \
+    HomeScreenPage.cpp \
     LoginPage.cpp \
     User.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ HEADERS += \
     CreateAccountPage.h \
     DeviceOverview.h \
     EnterAccountPage.h \
+    HomeScreenPage.h \
     LoginPage.h \
     User.h \
     mainwindow.h
@@ -28,6 +30,7 @@ HEADERS += \
 FORMS += \
     CreateAccountPage.ui \
     EnterAccountPage.ui \
+    HomeScreenPage.ui \
     LoginPage.ui \
     mainwindow.ui
 

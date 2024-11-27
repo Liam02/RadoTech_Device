@@ -12,3 +12,25 @@ bool DeviceOverview::doesUserExist(string email) const{
 void DeviceOverview::addUser(User* user){
     users.push_back(user);
 }
+
+bool DeviceOverview::doesAUserHaveEmailAndPassword(string email, string password){
+    for(int i = 0; i<int(users.size()); ++i){
+        if(users[i]->getEmail()==email and users[i]->getPassword()==password){
+            return true;
+        }
+    }
+    return false;
+}
+
+User* DeviceOverview::getUser(string email){
+    for(int i = 0; i<int(users.size()); ++i){
+        if(users[i]->getEmail()==email){
+            return users[i];
+        }
+    }
+}
+
+int DeviceOverview::numUsers(){
+    return users.size();
+}
+

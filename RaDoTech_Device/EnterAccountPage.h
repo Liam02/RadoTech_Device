@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include <string>
+using namespace std;
+
 namespace Ui {
 class EnterAccountPage;
 }
@@ -14,9 +17,12 @@ class EnterAccountPage : public QDialog
 public:
     explicit EnterAccountPage(QWidget *parent = nullptr);
     ~EnterAccountPage();
+    void wrongEmailOrPassword();
+    void resetPage();
 
 signals:
     void backButtonClicked();
+    void signInButtonClicked(string email, string password);
 
 private:
     Ui::EnterAccountPage *ui;

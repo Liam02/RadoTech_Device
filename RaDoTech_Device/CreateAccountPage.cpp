@@ -20,7 +20,7 @@ CreateAccountPage::CreateAccountPage(QWidget *parent) :
         }
     });
 
-    connect(ui->SaveAndContinue, &QPushButton::clicked, this, [this]() {
+    connect(ui->SaveAndContinue, &QPushButton::clicked, this, [=]() {
         if(ui->Weigth->text().toFloat()==0.0){
             ui->errorText->setText("Invalid weight input");
             ui->errorText->setStyleSheet("QLabel { color : red; }");
@@ -73,6 +73,16 @@ bool CreateAccountPage::isValidEmail(std::string email) {
 void CreateAccountPage::userAlreadyExist(){
     ui->errorText->setText("User with email: (" + ui->Email->text() + ") already exist");
     ui->errorText->setStyleSheet("QLabel { color : red; }");
+}
+
+void CreateAccountPage::resetPage(){
+    for (QLineEdit* lineEdit : this->findChildren<QLineEdit*>()) {
+        lineEdit->clear();
+    }
+    for (QRadioButton* radioButton : this->findChildren<QRadioButton*>()) {
+        radioButton->setChecked(false);
+    }
+    ui->errorText->clear();
 }
 
 CreateAccountPage::~CreateAccountPage()

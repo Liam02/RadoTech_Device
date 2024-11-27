@@ -16,7 +16,9 @@ public:
     void createUser();
     bool doesUserExist(string email) const;
     void addUser(User* user);
-
+    bool doesAUserHaveEmailAndPassword(string email, string password);
+    User* getUser(string email);
+    int numUsers();
 };
 
 #endif // DEVICEOVERVIEW_H
