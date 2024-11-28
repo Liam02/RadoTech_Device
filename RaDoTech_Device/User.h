@@ -9,7 +9,7 @@ public:
 };
 
 #endif // USER_H
-ivate:
+private:
     string firstName;
     string lastName;
     string gender;
