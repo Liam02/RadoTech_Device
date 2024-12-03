@@ -8,6 +8,7 @@ public:
     User();
 };
 #endif // USER_H
+
 private:
     string firstName;
     string lastName;
