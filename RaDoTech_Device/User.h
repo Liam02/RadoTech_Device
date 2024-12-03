@@ -7,7 +7,6 @@ class User
 public:
     User();
 };
-
 #endif // USER_H
 private:
     string firstName;
