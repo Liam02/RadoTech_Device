@@ -1,9 +1,8 @@
+#include "mainwindow.h"
 #include "LoginPage.h"
 #include "CreateAccountPage.h"
 #include "EnterAccountPage.h"
 #include "HomeScreenPage.h"
-#include "measuringpage.h"
-#include "endofscannotes.h"
 
 #include <QApplication>
 #include "DeviceOverview.h"
@@ -27,8 +26,6 @@ int main(int argc, char *argv[])
     CreateAccountPage  *createAccountPage = new CreateAccountPage();
     EnterAccountPage *enterAccountPage = new EnterAccountPage();
     HomeScreenPage *homeScreenPage = new HomeScreenPage();
-    MeasuringPage *measuringpage = new MeasuringPage();
-    endOfScanNotes *endofScanPage = new endOfScanNotes();
 
     loginPage->show();
     //MainWindow* w = new MainWindow();
@@ -59,6 +56,7 @@ int main(int argc, char *argv[])
             User* user = new User(firstName, lastName, gender, weightKG, heightCM, daob, country, phoneNumber, email, password);
             DO.addUser(user);
             homeScreenPage->setUser(user);
+            homeScreenPage->setBattery(DO.getBattery());
             createAccountPage->resetPage();
             enterAccountPage->resetPage();
             createAccountPage->hide();
@@ -82,6 +80,7 @@ int main(int argc, char *argv[])
             createAccountPage->resetPage();
             enterAccountPage->hide();
             homeScreenPage->setUser(DO.getUser(email));
+            homeScreenPage->setBattery(DO.getBattery());
             homeScreenPage->show();
         }
         else{
@@ -94,27 +93,10 @@ int main(int argc, char *argv[])
         loginPage->show();
     });
 
-    QObject::connect(homeScreenPage, &HomeScreenPage::measureNowButtonClicked, [homeScreenPage, measuringpage](){
-       homeScreenPage->hide();
-       measuringpage->show();
-    });
 
-    QObject::connect(measuringpage, &MeasuringPage::backButtonClicked, [measuringpage, homeScreenPage](){
-        measuringpage->hide();
-        homeScreenPage->show();
-    });
-    QObject::connect(measuringpage, &MeasuringPage::sendReadingToUser, [measuringpage, createAccountPage, enterAccountPage, homeScreenPage, &DO](map<string, int> scan, map<string, string> analysis) {
-        homeScreenPage->setaNewReading(scan, analysis);
-    });
 
-    QObject::connect(measuringpage, &MeasuringPage::saveButtonClicked, [measuringpage, endofScanPage](){
-       measuringpage->hide();
-       endofScanPage->show();
-    });
-    QObject::connect(endofScanPage, &endOfScanNotes::sendNotesToUser, [endofScanPage,homeScreenPage](int a, int b, int c, int d, int e, int f, int g) {
-        homeScreenPage->addEndOfScan(a,b,c,d,e,f,g);
-        endofScanPage->hide();
-        homeScreenPage->show();
-    });
+
+
+
     return a.exec();
 }

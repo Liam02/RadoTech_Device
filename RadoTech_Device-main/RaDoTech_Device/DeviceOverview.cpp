@@ -28,10 +28,18 @@ User* DeviceOverview::getUser(string email){
             return users[i];
         }
     }
-    return NULL;
+
+    return nullptr;
 }
 
 int DeviceOverview::numUsers(){
     return users.size();
 }
 
+void DeviceOverview::handleLowBattery(){
+    battery->checkLowBattery();
+}
+
+Battery* DeviceOverview:: getBattery(){
+    return battery;
+}
