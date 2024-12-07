@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
             User* user = new User(firstName, lastName, gender, weightKG, heightCM, daob, country, phoneNumber, email, password);
             DO.addUser(user);
             homeScreenPage->setUser(user);
+            homeScreenPage->setBattery(DO.getBattery());
             createAccountPage->resetPage();
             enterAccountPage->resetPage();
             createAccountPage->hide();
@@ -79,6 +80,7 @@ int main(int argc, char *argv[])
             createAccountPage->resetPage();
             enterAccountPage->hide();
             homeScreenPage->setUser(DO.getUser(email));
+            homeScreenPage->setBattery(DO.getBattery());
             homeScreenPage->show();
         }
         else{

@@ -2,6 +2,7 @@
 #define HOMESCREENPAGE_H
 
 #include "User.h"
+#include "Battery.h"
 #include <QDialog>
 #include <QString>
 #include <QTimer>
@@ -18,6 +19,10 @@ public:
     explicit HomeScreenPage(QWidget *parent = nullptr);
     ~HomeScreenPage();
     void setUser(User* user);
+    void setBattery(Battery* battery);
+
+public slots:
+    void handleBattery();
 
 signals:
     void logoutButtonClicked();
@@ -25,6 +30,9 @@ signals:
 private:
     Ui::HomeScreenPage *ui;
     User* user = new User();
+
+    Battery* battery;
+
 };
 
 #endif // HOMESCREENPAGE_H

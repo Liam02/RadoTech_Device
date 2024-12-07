@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Battery.cpp \
     CreateAccountPage.cpp \
     DeviceOverview.cpp \
     EnterAccountPage.cpp \
@@ -19,11 +20,13 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    Battery.h \
     CreateAccountPage.h \
     DeviceOverview.h \
     EnterAccountPage.h \
     HomeScreenPage.h \
     LoginPage.h \
+    User.h
     User.h \
     mainwindow.h
 
