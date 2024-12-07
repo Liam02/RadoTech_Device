@@ -28,10 +28,16 @@ User* DeviceOverview::getUser(string email){
             return users[i];
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 int DeviceOverview::numUsers(){
     return users.size();
+}
+
+void DeviceOverview::removeUser(int index) {
+    if (index >= 0 && index < users.size()) {
+        users.erase(users.begin() + index);
+    }
 }
 
