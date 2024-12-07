@@ -19,6 +19,8 @@ public:
     bool doesAUserHaveEmailAndPassword(string email, string password);
     User* getUser(string email);
     int numUsers();
+    vector<User*> getUsers() const { return users; }
+    void removeUser(int index);
 };
 
 #endif // DEVICEOVERVIEW_H

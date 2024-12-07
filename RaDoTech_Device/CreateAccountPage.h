@@ -18,8 +18,8 @@ class CreateAccountPage : public QDialog
 public:
     explicit CreateAccountPage(QWidget *parent = nullptr);
     ~CreateAccountPage();
-    bool isValidDateOfBirth(const std::string& dob);
-    bool isValidEmail(std::string email);
+    bool isValidDateOfBirth(const string& dob);
+    bool isValidEmail(string email);
     void userAlreadyExist();
     void resetPage();
 

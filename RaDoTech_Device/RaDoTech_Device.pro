@@ -10,34 +10,29 @@ CONFIG += c++11
 
 SOURCES += \
     CreateAccountPage.cpp \
+    DeleteProfilesPage.cpp \
     DeviceOverview.cpp \
     EnterAccountPage.cpp \
-    HealthMetrics.cpp \
     HomeScreenPage.cpp \
     LoginPage.cpp \
     User.cpp \
-    endofscannotes.cpp \
-    main.cpp \
-    measuringpage.cpp
+    main.cpp
 
 HEADERS += \
     CreateAccountPage.h \
+    DeleteProfilesPage.h \
     DeviceOverview.h \
     EnterAccountPage.h \
-    HealthMetrics.h \
     HomeScreenPage.h \
     LoginPage.h \
-    User.h \
-    endofscannotes.h \
-    measuringpage.h
+    User.h
 
 FORMS += \
     CreateAccountPage.ui \
+    DeleteProfilesPage.ui \
     EnterAccountPage.ui \
     HomeScreenPage.ui \
-    LoginPage.ui \
-    endofscannotes.ui \
-    measuringpage.ui
+    LoginPage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
