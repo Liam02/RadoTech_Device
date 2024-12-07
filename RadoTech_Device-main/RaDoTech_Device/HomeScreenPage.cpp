@@ -12,11 +12,11 @@ HomeScreenPage::HomeScreenPage(QWidget *parent) :
     connect(timer1, &QTimer::timeout, this, [=]() { ui->Name_Display->setText(QString::fromStdString(user->getFirstName()) +" "+ QString::fromStdString(user->getLastName())); });
     timer1->start(100); // Run every 100 ms (0.1 second)
 
+
     ui->recharge->setVisible(false);
     ui->lowBatteryWarning->setVisible(false);
 
     connect(ui->recharge, &QPushButton::clicked, this, [=]() {emit ;});
-
 
 }
 

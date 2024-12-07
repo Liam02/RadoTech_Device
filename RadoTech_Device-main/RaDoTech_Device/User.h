@@ -18,6 +18,7 @@ public:
     string getLastName();
 
 private:
+
     string firstName;
     string lastName;
     string gender;
@@ -28,7 +29,6 @@ private:
     string phoneNumber;
     string email;
     string password;
-
 
 };
 

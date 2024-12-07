@@ -30,7 +30,9 @@ signals:
 private:
     Ui::HomeScreenPage *ui;
     User* user = new User();
+
     Battery* battery;
+
 };
 
 #endif // HOMESCREENPAGE_H

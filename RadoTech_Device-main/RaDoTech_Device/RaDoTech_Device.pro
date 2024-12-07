@@ -16,7 +16,8 @@ SOURCES += \
     HomeScreenPage.cpp \
     LoginPage.cpp \
     User.cpp \
-    main.cpp
+    main.cpp \
+    mainwindow.cpp
 
 HEADERS += \
     Battery.h \
@@ -26,12 +27,15 @@ HEADERS += \
     HomeScreenPage.h \
     LoginPage.h \
     User.h
+    User.h \
+    mainwindow.h
 
 FORMS += \
     CreateAccountPage.ui \
     EnterAccountPage.ui \
     HomeScreenPage.ui \
-    LoginPage.ui
+    LoginPage.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
