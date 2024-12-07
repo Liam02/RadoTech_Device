@@ -28,7 +28,6 @@ User* DeviceOverview::getUser(string email){
             return users[i];
         }
     }
-    return NULL;
 }
 
 int DeviceOverview::numUsers(){
